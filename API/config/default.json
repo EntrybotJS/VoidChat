@@ -1,0 +1,13 @@
+{
+    "webserver": {
+        "secure": {
+            "enable": false
+        },
+        "http": {
+            "port": 3000
+        },
+        "https": {
+            "port": 3443
+        }
+    }
+}
