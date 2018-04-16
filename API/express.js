@@ -16,7 +16,6 @@ app.use(bodyParser.urlencoded({ extended: false }))
 app.use(helmet())
 app.use(morgan('dev'))
 app.use(compression({filter: shouldCompress}))
-app.use('/public', express.static('public'))
 app.use('/auth', authRouter)
 
 function shouldCompress(req, res) {
