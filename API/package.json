@@ -10,7 +10,7 @@
     "eslint-f": "eslint --fix ./"
   },
   "author": "Julien Ferluc",
-  "license": "GPL-3.0",
+  "license": "",
   "private": true,
   "dependencies": {
     "body-parser": "^1.18.2",
