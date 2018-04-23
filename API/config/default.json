@@ -4,10 +4,10 @@
             "enable": false
         },
         "http": {
-            "port": 3000
+            "port": 8080
         },
         "https": {
-            "port": 3443
+            "port": 8443
         }
     }
 }
