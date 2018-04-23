@@ -49,8 +49,14 @@ class LoginForm extends Component {
 	render() {
 		return (
 			<form onSubmit={this.handleSubmit}>
-				<input type='text' name='username' onChange={this.handleChange}/>
-				<input type='password' name='password' onChange={this.handleChange}/>
+				<div className='input-label'>
+					<input type='text' name='username' onChange={this.handleChange}/>
+					<label>username</label>
+				</div>
+				<div className='input-label'>
+					<input type='password' name='password' onChange={this.handleChange}/>
+					<label>password</label>
+				</div>
 				<input type='submit'/>
 			</form>
 		)
@@ -59,7 +65,7 @@ class LoginForm extends Component {
 
 function verifyCreds(username, password, callback) {
 	//Test passwords return a number for errors > 0
-	if(username === '' || usernname == null) {
+	if(username === '' || username == null) {
 		return 1
 	}
 
