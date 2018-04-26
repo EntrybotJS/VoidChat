@@ -8,10 +8,15 @@ const socketIO = require('socket.io')
 //  Native Node modules
 const http = require('http')
 const https = require('https')
+const fs = require('fs')
+const path = require('path')
 
 //  HTTPS options for the server
 //TODO: setup ssl
-const httpsOptions = {}
+const httpsOptions = {
+	key: fs.readFileSync(path.resolve(config.get('webserver.ssl.key')), 'utf8'), //  Set key path
+	cert: fs.readFileSync(path.resolve(config.get('webserver.ssl.cert')), 'utf8') //  Set cert path
+}
 
 const httpServer = http.createServer(app)
 const httpsServer = https.createServer(httpsOptions, app)
@@ -19,6 +24,7 @@ const httpsServer = https.createServer(httpsOptions, app)
 let io = socketIO(httpsServer)
 
 io.on('connection', (socket) => {
+	console.log('Connection!')
 	socket.emit('/hello', { 'test': true })
 })
 

@@ -1,13 +1,17 @@
 {
     "webserver": {
         "secure": {
-            "enable": false
+            "enable": true
         },
         "http": {
             "port": 8080
         },
         "https": {
             "port": 8443
+        },
+        "ssl": {
+            "key": "ssl/ca.key",
+            "cert": "ssl/ca.crt"
         }
     }
 }
