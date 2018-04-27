@@ -2,8 +2,9 @@ const express = require('express')
 
 const router = express.Router()
 
-router.get('/', (req, res, next) => {
-	res.send('hello, welcome to /auth')
+router.post('/login', (req, res, next) => {
+	console.log(req.body)
+	res.send(true)
 	next()
 })
 

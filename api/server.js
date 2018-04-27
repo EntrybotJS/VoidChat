@@ -25,10 +25,6 @@ let io = socketIO(httpsServer)
 //			WebSockets
 io.on('connection', (socket) => {
 	//	On connect
-	socket.on('login', (data) => {
-		socket.emit('login', data)
-	})
-
 	socket.on('disconnect', () => {
 		//	On disconnect
 	})

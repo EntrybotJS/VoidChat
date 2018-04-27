@@ -12,6 +12,9 @@
         "ssl": {
             "key": "ssl/ca.key",
             "cert": "ssl/ca.crt"
+        },
+        "cors": {
+            "origin": "*"
         }
     }
 }

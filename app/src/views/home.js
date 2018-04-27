@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import '../styles/Home.css'
 import PropTypes from 'prop-types'
+import axios from 'axios'
 
 class Home extends Component {
 	constructor(props) {
@@ -26,10 +27,18 @@ class Home extends Component {
 		})
 
 		//	Subject to change, could be very unsafe, need more analysis and studying
-		this.props.socket.emit('login', {
+		/*this.props.socket.emit('login', {
 			username: username,
 			password: password
-		})
+		})*/
+
+		axios.post('https://localhost:8443/auth/login', { username: username, password: password })
+			.then((response) => {
+				console.log(response)
+			})
+			.catch((reason) => {
+				console.log(reason)
+			})
 
 		this.props.socket.on('login', (data) => {
 			//	Recieve response of login operation
