@@ -14,16 +14,19 @@ import Home from './views/home'
 import registerServiceWorker from './registerServiceWorker'
 
 class App extends Component {
-	componentDidMount() {
-		this.setState({
-			socket: io('https://localhost:8443', { reconnectionDelay: 5000 })
-		})
+	constructor(props) {
+		super(props)
+
+		this.socket = io('wss://localhost:8443', { secure: true, upgrade: true })
+	}
+	componentWillUnmount() {
+		this.socket.disconnect()
 	}
 	render() {
 		return (
 			<Router>
 				<Switch>
-					<Route exact path="/" render={(props) => (<Home {... props} brand='VoidChat'/>)}/>
+					<Route exact path="/" render={(props) => (<Home {... props} socket={this.socket} brand='VoidChat'/>)}/>
 					<Route render={() => (<p>Oops, it seems like you got lost.</p>)}/>
 				</Switch>
 			</Router>

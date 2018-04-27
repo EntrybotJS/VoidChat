@@ -9,7 +9,7 @@ class Home extends Component {
 		super(props)
 
 		this.state = {
-			error: ''
+			message: null
 		}
 
 		this.handleFormError = this.handleFormError.bind(this)
@@ -17,12 +17,23 @@ class Home extends Component {
 	}
 	handleFormError(errorCode) {
 		this.setState({
-			error: translateError(errorCode)
+			message: translateError(errorCode)
 		})
 	}
-	handleFormSuccess() {
+	handleFormSuccess(username, password) {
 		this.setState({
-			error: 'Form sent successfully'
+			message: null
+		})
+
+		//	Subject to change, could be very unsafe, need more analysis and studying
+		this.props.socket.emit('login', {
+			username: username,
+			password: password
+		})
+
+		this.props.socket.on('login', (data) => {
+			//	Recieve response of login operation
+			//	If the response is positive, move to messaging page, if not, set state for error
 		})
 	}
 	render() {
@@ -72,7 +83,7 @@ class LoginForm extends Component {
 		let code = verifyCreds(e.target.username.value, e.target.password.value)
 
 		if(code === 0) { //	Send request to api
-			this.props.onFormSuccess(code)
+			this.props.onFormSuccess(e.target.username.value, e.target.password.value)
 		} else {
 			this.props.onFormError(code)
 		}

@@ -12,7 +12,6 @@ const fs = require('fs')
 const path = require('path')
 
 //  HTTPS options for the server
-//TODO: setup ssl
 const httpsOptions = {
 	key: fs.readFileSync(path.resolve(config.get('webserver.ssl.key')), 'utf8'), //  Set key path
 	cert: fs.readFileSync(path.resolve(config.get('webserver.ssl.cert')), 'utf8') //  Set cert path
@@ -23,9 +22,16 @@ const httpsServer = https.createServer(httpsOptions, app)
 
 let io = socketIO(httpsServer)
 
+//			WebSockets
 io.on('connection', (socket) => {
-	console.log('Connection!')
-	socket.emit('/hello', { 'test': true })
+	//	On connect
+	socket.on('login', (data) => {
+		socket.emit('login', data)
+	})
+
+	socket.on('disconnect', () => {
+		//	On disconnect
+	})
 })
 
 httpServer.listen(config.get('webserver.http.port'), () => {
