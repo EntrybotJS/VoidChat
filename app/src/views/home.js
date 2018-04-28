@@ -21,18 +21,18 @@ class Home extends Component {
 			message: translateError(errorCode)
 		})
 	}
-	handleFormSuccess(username, password) {
+	handleFormSuccess(handle, password) {
 		this.setState({
 			message: null
 		})
 
 		//	Subject to change, could be very unsafe, need more analysis and studying
 		/*this.props.socket.emit('login', {
-			username: username,
+			handle: handle,
 			password: password
 		})*/
 
-		axios.post('https://localhost:8443/auth/login', { username: username, password: password })
+		axios.post('https://localhost:8443/auth/login', { handle: handle, password: password })
 			.then((response) => {
 				console.log(response)
 			})
@@ -79,7 +79,7 @@ class LoginForm extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			username: '',
+			handle: '',
 			password: ''
 		}
 
@@ -89,10 +89,10 @@ class LoginForm extends Component {
 	handleSubmit(e) {
 		e.preventDefault()
 		
-		let code = verifyCreds(e.target.username.value, e.target.password.value)
+		let code = verifyCreds(e.target.handle.value, e.target.password.value)
 
 		if(code === 0) { //	Send request to api
-			this.props.onFormSuccess(e.target.username.value, e.target.password.value)
+			this.props.onFormSuccess(e.target.handle.value, e.target.password.value)
 		} else {
 			this.props.onFormError(code)
 		}
@@ -105,8 +105,8 @@ class LoginForm extends Component {
 		return (
 			<form onSubmit={this.handleSubmit}>
 				<div className='input-label'>
-					<input type='text' name='username' onChange={this.handleChange}/>
-					<label>username</label>
+					<input type='text' name='handle' onChange={this.handleChange}/>
+					<label>handle</label>
 				</div>
 				<div className='input-label'>
 					<input type='password' name='password' onChange={this.handleChange}/>
@@ -128,8 +128,8 @@ const LoginError = (props) => (
 )
 
 //	eslint-disable-next-line
-function verifyCreds(username, password) {
-	if(username === '' || username == null) {
+function verifyCreds(handle, password) {
+	if(handle === '' || handle == null) {
 		return 1
 	}
 
@@ -143,7 +143,7 @@ function verifyCreds(username, password) {
 function translateError(errorCode) {
 	switch(errorCode) {
 	case 1:
-		return 'Username is empty'
+		return 'Handle is empty'
 	case 2:
 		return 'Password is empty'
 	default:
