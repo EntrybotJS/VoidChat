@@ -1,7 +1,7 @@
 //	eslint-disable-next-line no-unused-vars
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import '../styles/Home.css'
+import '../styles/home.css'
 import PropTypes from 'prop-types'
 import axios from 'axios'
 
@@ -26,12 +26,6 @@ class Home extends Component {
 			message: null
 		})
 
-		//	Subject to change, could be very unsafe, need more analysis and studying
-		/*this.props.socket.emit('login', {
-			handle: handle,
-			password: password
-		})*/
-
 		axios.post('https://localhost:8443/auth/login', { handle: handle, password: password })
 			.then((response) => {
 				console.log(response)
@@ -39,11 +33,6 @@ class Home extends Component {
 			.catch((reason) => {
 				console.log(reason)
 			})
-
-		this.props.socket.on('login', (data) => {
-			//	Recieve response of login operation
-			//	If the response is positive, move to messaging page, if not, set state for error
-		})
 	}
 	render() {
 		return (
@@ -52,8 +41,10 @@ class Home extends Component {
 					<div className='landing'>
 						<div className='menu'>
 							<h1>{this.props.brand}</h1>
-							<Link to='/privacy'>Privacy</Link>
-							<Link to='/how'>How</Link>
+							<ul>
+								<li><Link to='/privacy'>Privacy</Link></li>
+								<li><Link to='/how'>How</Link></li>
+							</ul>
 						</div>
 						<div className='page-content'>
 							<h1>Login</h1>
