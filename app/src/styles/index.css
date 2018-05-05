@@ -1,5 +1,72 @@
+form {
+  max-width: 500px;
+  padding: 10px; }
+  form input {
+    padding: 6px;
+    margin: 5px 0;
+    font-size: 16px;
+    border: 1px solid #363636;
+    border-radius: 2px;
+    width: calc(100% - 14px);
+    font-weight: 300;
+    outline: 0; }
+  form .register-link {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 5px; }
+    form .register-link a {
+      padding-top: 6px;
+      font-size: 16px;
+      font-weight: 300; }
+    form .register-link button {
+      font-size: 16px;
+      padding: 7px 15px;
+      border-radius: 5px;
+      border: 1px solid #363636;
+      color: #363636;
+      background-color: transparent;
+      outline: 0; }
+      form .register-link button:hover {
+        background-color: #363636;
+        color: white; }
+      form .register-link button:active {
+        background-color: #587291; }
+
+body {
+  font-family: -apple-system, "Roboto", system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; }
+
+.page .landing {
+  height: 100vh;
+  width: 100vw; }
+  .page .landing .menu {
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between; }
+    .page .landing .menu h1 {
+      font-size: 20px;
+      font-weight: 300;
+      line-height: 1.6;
+      margin: 0; }
+    .page .landing .menu ul {
+      list-style: none;
+      padding: 0;
+      margin: 0; }
+      .page .landing .menu ul li {
+        display: inline-block;
+        margin-left: 10px; }
+        .page .landing .menu ul li a {
+          font-size: 20px;
+          font-weight: 300;
+          line-height: 1.6;
+          padding: 5px;
+          text-decoration: none; }
+
 body {
   margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-}
+  padding: 0; }
+
+input, textarea, select, button {
+  font-family: -apple-system, "Roboto", system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; }

@@ -1,0 +1,11 @@
+@import './loginForm.scss';
+@import './home.scss';
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+input, textarea, select, button {
+  font-family: -apple-system, "Roboto", system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+}
