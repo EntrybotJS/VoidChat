@@ -3,6 +3,7 @@ import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 import LoginForm from '../components/loginForm'
+import SiteMenu from '../components/siteMenu'
 import axios from 'axios'
 
 class Home extends Component {
@@ -39,15 +40,7 @@ class Home extends Component {
 			<main>
 				<div className='page'>
 					<div className='landing'>
-						<div className='menu'>
-							<h1>{this.props.brand}</h1>
-							<ul>
-								<li><Link to='/privacy'>Privacy</Link></li>
-								<li><Link to='/how'>How</Link></li>
-							</ul>
-						</div>
 						<div className='page-content'>
-							<h1>Login</h1>
 							<LoginError error={this.state.error}/>
 							<LoginForm onFormError={this.handleFormError} onFormSuccess={this.handleFormSuccess}/>
 						</div>

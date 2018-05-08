@@ -31,6 +31,7 @@ class LoginForm extends Component {
 	render() {
 		return (
 			<form onSubmit={this.handleSubmit}>
+				<h1>Login</h1>
 				<input type='text' name='handle' placeholder='username' onChange={this.handleChange}/>
 				<input type='password' name='password' placeholder='password' onChange={this.handleChange}/>
 				<div className='register-link'>
