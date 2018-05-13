@@ -1,60 +1,98 @@
-form {
-  max-width: 500px;
-  padding: 10px; }
-  form h1 {
-    font-family: -apple-system, System-ui, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    margin: 0;
-    text-align: center;
-    font-size: 40px; }
-  form input {
-    padding: 6px;
-    margin: 5px 0;
-    font-size: 18px;
-    border: 1px solid #838383;
-    border-radius: 2px;
-    width: calc(100% - 14px);
-    font-weight: 300;
-    outline: 0; }
-  form .register-link {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    margin-top: 5px; }
-    form .register-link a {
-      padding-top: 6px;
+.form-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .form-container form {
+    max-width: 500px;
+    padding: 10px; }
+    .form-container form h1 {
+      font-family: -apple-system, System-ui, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+      margin: 0;
+      text-align: center;
+      font-size: 40px; }
+    .form-container form input {
+      padding: 6px;
+      margin: 5px 0;
       font-size: 18px;
-      font-weight: 300; }
-    form .register-link button {
-      font-size: 18px;
-      padding: 7px 15px;
-      border-radius: 2px;
-      border: 1px solid  #006eff;
-      background-color: #006eff;
-      color: white;
+      border: 1px solid #838383;
+      border-radius: 3px;
+      width: calc(100% - 14px);
+      font-weight: 300;
       outline: 0; }
-      form .register-link button:hover {
+    .form-container form .register-link {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-top: 5px; }
+      .form-container form .register-link a {
+        padding-top: 6px;
+        font-size: 18px;
+        font-weight: 300; }
+        .form-container form .register-link a:hover {
+          color: #004caf; }
+        .form-container form .register-link a:active {
+          color: #006eff; }
+      .form-container form .register-link button {
+        font-size: 18px;
+        padding: 7px 15px;
+        max-height: 40px;
+        border-radius: 3px;
         border: 1px solid  #006eff;
-        background-color: transparent;
-        color: #006eff; }
-      form .register-link button:active {
-        background-color: #34fd45;
-        border: 1px solid #34fd45;
-        color: black; }
+        background-color: #006eff;
+        color: white;
+        outline: 0; }
+        .form-container form .register-link button:hover {
+          border: 1px solid  #006eff;
+          background-color: transparent;
+          color: #006eff; }
+        .form-container form .register-link button:active {
+          border: 1px solid  #006eff;
+          background-color: #006eff;
+          color: white; }
 
 body {
   font-family: -apple-system, "Roboto", system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; }
 
 .page .landing {
   min-height: 100vh; }
-  .page .landing .page-content {
-    height: 100vh;
+  .page .landing .landing-content .landing-hero {
+    min-height: 25vh;
+    background-color: #f3f7fc;
+    padding: 0 10px;
     display: flex;
-    align-items: center;
-    justify-content: center; }
+    justify-content: center;
+    align-items: center; }
+    .page .landing .landing-content .landing-hero .profile {
+      font-size: 18px;
+      padding: 17px;
+      line-height: 14px;
+      background-color: #d8d8d8;
+      color: white;
+      border-radius: 50%;
+      margin-right: 10px; }
+    .page .landing .landing-content .landing-hero .hero {
+      width: 100%;
+      max-width: 400px; }
+      .page .landing .landing-content .landing-hero .hero p {
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        padding: 10px 20px;
+        line-height: 28px;
+        background-color: #006eff;
+        border-radius: 100px;
+        color: white;
+        font-size: 26px;
+        text-align: center;
+        font-weight: 300; }
+        .page .landing .landing-content .landing-hero .hero p .action {
+          font-weight: 600; }
 
 body {
   margin: 0;
   padding: 0; }
+
+a {
+  color: #006eff; }
 
 input, textarea, select, button {
   font-family: -apple-system, "Roboto", system-ui, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; }

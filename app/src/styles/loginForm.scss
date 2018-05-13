@@ -1,56 +1,71 @@
-form {
-	max-width: 500px;
-	padding: 10px;
+.form-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 
-	h1 {
-		font-family: -apple-system, System-ui, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-		margin: 0;
-		text-align: center;
-		font-size: 40px;
-	}
+	form {
+		max-width: 500px;
+		padding: 10px;
 
-	input {
-		padding: 6px;
-		margin: 5px 0;
-		font-size: 18px;
-		border: 1px solid #838383;
-		border-radius: 2px;
-		width: calc(100% - 14px);
-		font-weight: 300;
-		outline: 0;
-	}
-
-	.register-link {
-		display: flex;
-		flex-direction: row;
-		justify-content: space-between;
-		margin-top: 5px;
-
-		a {
-			padding-top: 6px;
-			font-size: 18px;
-			font-weight: 300;
+		h1 {
+			font-family: -apple-system, System-ui, BlinkMacSystemFont, 'Segoe UI', Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+			margin: 0;
+			text-align: center;
+			font-size: 40px;
 		}
 
-		button {
+		input {
+			padding: 6px;
+			margin: 5px 0;
 			font-size: 18px;
-			padding: 7px 15px;
-			border-radius: 2px;
-			border: 1px solid  #006eff;
-			background-color: #006eff;
-			color: white;
+			border: 1px solid #838383;
+			border-radius: 3px;
+			width: calc(100% - 14px);
+			font-weight: 300;
 			outline: 0;
+		}
 
-			&:hover {
-				border: 1px solid  #006eff;
-				background-color: transparent;
-				color: #006eff;
+		.register-link {
+			display: flex;
+			flex-direction: row;
+			justify-content: space-between;
+			margin-top: 5px;
+
+			a {
+				padding-top: 6px;
+				font-size: 18px;
+				font-weight: 300;
+
+				&:hover {
+					color: #004caf;
+				}
+
+				&:active {
+					color: #006eff;
+				}
 			}
 
-			&:active {
-				background-color: #34fd45;
-				border: 1px solid #34fd45;
-				color: black;
+			button {
+				font-size: 18px;
+				padding: 7px 15px;
+				max-height: 40px;
+				border-radius: 3px;
+				border: 1px solid  #006eff;
+				background-color: #006eff;
+				color: white;
+				outline: 0;
+
+				&:hover {
+					border: 1px solid  #006eff;
+					background-color: transparent;
+					color: #006eff;
+				}
+
+				&:active {
+					border: 1px solid  #006eff;
+					background-color: #006eff;
+					color: white;
+				}
 			}
 		}
 	}

@@ -4,11 +4,13 @@
   flex-direction: row;
   align-items: center;
   justify-content: space-between; }
-  .menu h1 {
+  .menu a.brand {
     font-size: 20px;
     font-weight: 300;
     line-height: 1.6;
-    margin: 0; }
+    margin: 0;
+    text-decoration: none;
+    color: black; }
   .menu ul {
     list-style: none;
     padding: 0;

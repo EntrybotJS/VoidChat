@@ -6,12 +6,48 @@ body {
 	.landing{
 		min-height: 100vh;
 
-		.page-content {
-			height: 100vh;
-			
-			display: flex;
-			align-items: center;
-			justify-content: center;
+		.landing-content {
+			.landing-hero {
+				min-height: 25vh;
+				background-color: #f3f7fc;
+				padding: 0 10px;
+
+				display: flex;
+				justify-content: center;
+				align-items: center;
+
+				.profile {
+					font-size: 18px;
+					padding: 17px;
+					line-height: 14px;
+					background-color: #d8d8d8;
+					color: white;
+					border-radius: 50%;
+					margin-right: 10px;
+				}
+
+				.hero {
+					width: 100%;
+					max-width: 400px;
+					
+					p{
+						white-space: nowrap;
+						text-overflow: ellipsis;
+						padding: 10px 20px;
+						line-height: 28px;
+						background-color: #006eff;
+						border-radius: 100px;
+						color: white;
+						font-size: 26px;
+						text-align: center;
+						font-weight: 300;
+
+						.action {
+							font-weight: 600;
+						}
+					}
+				}
+			}
 		}
 	}
 }

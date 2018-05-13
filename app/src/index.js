@@ -9,6 +9,7 @@ import './styles/index.css'
 
 //	Routes
 import Home from './views/home'
+import Login from './views/login'
 
 //	Service workers
 import registerServiceWorker from './registerServiceWorker'
@@ -27,6 +28,7 @@ class App extends Component {
 			<Router>
 				<Switch>
 					<Route exact path="/" render={(props) => (<Home {... props} socket={this.socket} brand='VoidChat'/>)}/>
+					<Route exact path="/login" render={(props) => (<Login {... props} socket={this.socket} brand='VoidChat'/>)}/>
 					<Route render={() => (<p>Oops, it seems like you got lost.</p>)}/>
 				</Switch>
 			</Router>

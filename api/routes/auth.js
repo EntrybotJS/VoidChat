@@ -16,7 +16,7 @@ mongoose.connect('mongodb://192.168.2.150/VoidChat', { connectTimeoutMS: 1000 })
 
 router.post('/login', (req, res) => {
 	var db = mongoose.connection
-	db.on('error', console.error.bind(console, 'connection error:'))
+	db.on('error', console.error.bind(res.send, 'server error'))
 	db.collection('users').findOne({ handle: req.body.handle }, (err, docs) => {
 		if(err) {
 			res.send(false)

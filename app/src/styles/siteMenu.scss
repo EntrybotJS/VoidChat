@@ -5,12 +5,14 @@
 	align-items: center;
 	justify-content: space-between;
 
-	h1 {
+	a.brand {
 		//	This is the CSS for the branding
 		font-size: 20px;
 		font-weight: 300;
 		line-height: 1.6;
 		margin: 0;
+		text-decoration: none;
+		color: black;
 	}
 
 	ul {
