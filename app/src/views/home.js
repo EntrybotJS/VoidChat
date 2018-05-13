@@ -13,7 +13,6 @@ class Home extends Component {
 						<SiteMenu brand="VoidChat"/>
 						<div className='landing-content'>
 							<div className='landing-hero'>
-								<i class="fas fa-user profile"></i>
 								<LandingHero/>
 							</div>
 						</div>

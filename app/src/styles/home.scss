@@ -7,46 +7,90 @@ body {
 		min-height: 100vh;
 
 		.landing-content {
+			overflow: hidden;
+
 			.landing-hero {
-				min-height: 25vh;
-				background-color: #f3f7fc;
+				height: 25vh;
+				background-color: white;
 				padding: 0 10px;
+				overflow: hidden;
 
 				display: flex;
+				align-items: flex-end;
 				justify-content: center;
-				align-items: center;
-
-				.profile {
-					font-size: 18px;
-					padding: 17px;
-					line-height: 14px;
-					background-color: #d8d8d8;
-					color: white;
-					border-radius: 50%;
-					margin-right: 10px;
-				}
+				border-top: 1px solid rgba(0, 0, 0, .10);
+				border-bottom: 1px solid rgba(0, 0, 0, .10);
 
 				.hero {
+					display: flex;
+					max-width: 600px;
+					flex-direction: column;
+					overflow: hidden;
 					width: 100%;
-					max-width: 400px;
-					
-					p{
-						white-space: nowrap;
-						text-overflow: ellipsis;
-						padding: 10px 20px;
-						line-height: 28px;
-						background-color: #006eff;
-						border-radius: 100px;
-						color: white;
-						font-size: 26px;
-						text-align: center;
-						font-weight: 300;
 
-						.action {
-							font-weight: 600;
+					.message {
+						display: flex;
+						flex-direction: row-reverse;
+						align-items: center;
+						margin: 3px;
+
+						.user {
+							
+							font-size: 18px;
+							background-color: #c9c9c9;
+							padding: 7px 9px;
+							border-radius: 20px;
+							color: white;
+						}
+
+						.messageContent {
+							max-width: 300px;
+							margin: 0;
+							margin-right: 5px;
+							padding: 6px 10px;
+							border-radius: 15px;
+							line-height: 20px;
+							font-size: 22px;
+							font-weight: 300;
+							background-color: #0084ff;
+							color: white;
+							word-wrap: break-word;
+							overflow: wrap;
+						}
+					}
+
+					.messageSend {
+						display: flex;
+						flex-direction: row;
+						align-items: center;
+						margin: 3px;
+
+						.userSend {
+							
+							font-size: 18px;
+							margin-right: 5px;
+							background-color: #b1b1b1;
+							padding: 7px 9px;
+							border-radius: 20px;
+							color: white;
+						}
+
+						.messageContentSend {
+							max-width: 300px;
+							margin: 0;
+							padding: 6px 10px;
+							border-radius: 15px;
+							line-height: 20px;
+							font-size: 22px;
+							font-weight: 300;
+							background-color: #f1f0f0;
+							color: black;
+							word-wrap: break-word;
+							overflow: wrap;
 						}
 					}
 				}
+				
 			}
 		}
 	}
