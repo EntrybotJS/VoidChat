@@ -44,16 +44,16 @@ class LandingHero extends Component {
 		})
 	}
 	componentDidMount() {
-		setInterval(this.changeText, Math.random() * 4000)
+		setInterval(this.changeText, 1000)
 	}
 	render() {
 		return (
 			<div className='hero'>
 				{this.state.messages.map((value, index) => {
 					if(value[1] === 0) {
-						return (<div className='messageSend'><i className='fas fa-user userSend'></i><p className='messageContentSend'>{value[0]}</p></div>)
+						return (<div key={value[0]} className='messageSend'><i className='fas fa-user userSend'></i><p className='messageContentSend'>{value[0]}</p></div>)
 					} else {
-						return (<div className='message'><i className='fas fa-user user'></i><p className='messageContent'>{value[0]}</p></div>)
+						return (<div key={value[0]} className='message'><i className='fas fa-user user'></i><p className='messageContent'>{value[0]}</p></div>)
 					}
 					
 				})}

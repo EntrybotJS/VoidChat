@@ -56,17 +56,18 @@ body {
 .page .landing {
   min-height: 100vh; }
   .page .landing .landing-content {
-    overflow: hidden; }
+    overflow: hidden;
+    height: 25vh;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
     .page .landing .landing-content .landing-hero {
-      height: 25vh;
+      height: 105%;
       background-color: white;
       padding: 0 10px;
-      overflow: hidden;
+      filter: blur(4px);
       display: flex;
       align-items: flex-end;
-      justify-content: center;
-      border-top: 1px solid rgba(0, 0, 0, 0.1);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+      justify-content: center; }
       .page .landing .landing-content .landing-hero .hero {
         display: flex;
         max-width: 600px;
@@ -80,7 +81,7 @@ body {
           margin: 3px; }
           .page .landing .landing-content .landing-hero .hero .message .user {
             font-size: 18px;
-            background-color: #c9c9c9;
+            background-color: #b1b1b1;
             padding: 7px 9px;
             border-radius: 20px;
             color: white; }
