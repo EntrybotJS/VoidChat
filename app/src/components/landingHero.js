@@ -7,7 +7,7 @@ class LandingHero extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			messages: []
+			messages: [['What is the number of decimals in pi.', 0],['There are infinite decimals in pi.', 1],['Are you sure about that.', 0], ['Absolutely, yes.', 1],['How is that even possible.', 0],['Pi is a number which has no end.', 1],['What is the number of decimals in pi.', 0],['There are infinite decimals in pi.', 1],['Are you sure about that.', 0], ['Absolutely, yes.', 1],['How is that even possible.', 0],['Pi is a number which has no end.', 1],['What is the number of decimals in pi.', 0],['There are infinite decimals in pi.', 1],['Are you sure about that.', 0], ['Absolutely, yes.', 1],['How is that even possible.', 0],['Pi is a number which has no end.', 1]]
 		}
 
 		this.changeText = this.changeText.bind(this)
@@ -35,8 +35,8 @@ class LandingHero extends Component {
 		let tempArray = this.state.messages
 		tempArray.push([`${capitalizeFirstLetter(article[randArticle])} ${adjective[randAdjective]} ${noun[randNoun]} ${verb[randVerb]} ${preposition[randPrep]} ${article[randArticle2]} ${noun[randNoun2]}.`, Math.round(Math.random())])
 
-		if(tempArray.length >= 10) {
-			tempArray = tempArray.slice(-1 * 10)
+		if(tempArray.length >= 15) {
+			tempArray = tempArray.slice(-1 * 15)
 		}
 
 		this.setState({
@@ -44,7 +44,7 @@ class LandingHero extends Component {
 		})
 	}
 	componentDidMount() {
-		setInterval(this.changeText, 1000)
+		setInterval(this.changeText, 3500)
 	}
 	render() {
 		return (
