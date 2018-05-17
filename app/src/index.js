@@ -1,7 +1,7 @@
 //	ES6 "External" modules
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom'
 import io from 'socket.io-client'
 
 //	Styling
@@ -29,7 +29,7 @@ class App extends Component {
 				<Switch>
 					<Route exact path="/" render={(props) => (<Home {... props} socket={this.socket} brand='VoidChat'/>)}/>
 					<Route exact path="/login" render={(props) => (<Login {... props} socket={this.socket} brand='VoidChat'/>)}/>
-					<Route render={() => (<p>Oops, it seems like you got lost.</p>)}/>
+					<Route render={() => (<p>Oops, it seems like you got lost. You can find you way <Link to='/'>here</Link>.</p>)}/>
 				</Switch>
 			</Router>
 		)

@@ -11,7 +11,7 @@ class Login extends Component {
 		super(props)
 
 		this.state = {
-			message: null
+			errorMessage: null
 		}
 
 		this.handleFormError = this.handleFormError.bind(this)
@@ -19,17 +19,24 @@ class Login extends Component {
 	}
 	handleFormError(errorCode) {
 		this.setState({
-			message: translateError(errorCode)
+			errorMessage: translateError(errorCode)
 		})
 	}
 	handleFormSuccess(handle, password) {
 		this.setState({
-			message: null
+			errorMessage: null
 		})
 
 		axios.post('https://localhost:8443/auth/login', { handle: handle, password: password })
 			.then((response) => {
-				console.log(response)
+				if(!response.data) {
+					this.setState({
+						errorMessage: 'Wrong login credentials'
+					})
+				} else {
+					//it worked!
+					console.log('It worked!')
+				}
 			})
 			.catch((reason) => {
 				console.log(reason)
@@ -42,7 +49,7 @@ class Login extends Component {
 					<div className='landing'>
 						<SiteMenu brand="VoidChat"/>
 						<div className='page-content'>
-							<LoginError error={this.state.error}/>
+							<LoginError error={this.state.errorMessage}/>
 							<LoginForm onFormError={this.handleFormError} onFormSuccess={this.handleFormSuccess}/>
 						</div>
 					</div>
@@ -67,7 +74,7 @@ const LoginError = (props) => (
 function translateError(errorCode) {
 	switch(errorCode) {
 	case 1:
-		return 'Handle is empty'
+		return 'Username is empty'
 	case 2:
 		return 'Password is empty'
 	default:

@@ -31,6 +31,14 @@
 				line-height: 1.6;
 				padding: 5px;
 				text-decoration: none;
+
+				&:hover {
+					color: #004caf;
+				}
+
+				&:active {
+					color: #006eff;
+				}
 			}
 		}
 	}

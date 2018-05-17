@@ -10,6 +10,8 @@ class LoginForm extends Component {
 			password: ''
 		}
 
+		this.baseState = this.state
+
 		this.handleSubmit = this.handleSubmit.bind(this)
 		this.handleChange = this.handleChange.bind(this)
 	}
@@ -23,6 +25,9 @@ class LoginForm extends Component {
 		} else {
 			this.props.onFormError(code)
 		}
+	}
+	componentWillUnmount() {
+		this.setState(this.baseState)
 	}
 	handleChange(event) {
 		const value = event.target.type === 'checkbox' ? event.target.checked : event.target.value

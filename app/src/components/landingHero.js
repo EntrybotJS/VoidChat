@@ -7,7 +7,7 @@ class LandingHero extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			messages: [['What is the number of decimals in pi.', 0],['There are infinite decimals in pi.', 1],['Are you sure about that.', 0], ['Absolutely, yes.', 1],['How is that even possible.', 0],['Pi is a number which has no end.', 1],['What is the number of decimals in pi.', 0],['There are infinite decimals in pi.', 1],['Are you sure about that.', 0], ['Absolutely, yes.', 1],['How is that even possible.', 0],['Pi is a number which has no end.', 1],['What is the number of decimals in pi.', 0],['There are infinite decimals in pi.', 1],['Are you sure about that.', 0], ['Absolutely, yes.', 1],['How is that even possible.', 0],['Pi is a number which has no end.', 1]]
+			messages: [['What is the number of decimals in pi.', 0],['There are infinite decimals in pi.', 1],['Are you sure about that.', 0], ['Absolutely, yes.', 1],['How is that even possible.', 0],['Pi is a number which has no end.', 1],['What is the number of decimals in pi?', 0],['There are infinite decimals in pi...', 1],['Are you sure about that?', 0], ['Absolutely, yes!', 1],['How is that even possible?', 0],['Pi is a number which has no end...', 1],['What is the number of decimals in pi??', 0],['There are infinite decimals in pi..', 1],['Are you sure about that??', 0], ['Absolutely, yes!!', 1],['How is that even possible??', 0],['Pi is a number which has no end!!', 1]]
 		}
 
 		this.changeText = this.changeText.bind(this)
@@ -44,7 +44,12 @@ class LandingHero extends Component {
 		})
 	}
 	componentDidMount() {
-		setInterval(this.changeText, 3500)
+		this.setState({
+			interval: setInterval(this.changeText, 3500)
+		})
+	}
+	componentWillUnmount() {
+		clearInterval(this.state.interval)
 	}
 	render() {
 		return (

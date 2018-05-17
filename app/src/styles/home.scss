@@ -9,8 +9,8 @@ body {
 		.landing-content {
 			overflow: hidden;
 			height: 25vh;
-			border-top: 1px solid rgba(0, 0, 0, .10);
-			border-bottom: 1px solid rgba(0, 0, 0, .10);
+			border-top: 1px solid rgba(0, 0, 0, 0.1);
+			border-bottom: 1px solid rgba(0, 0, 0, .1);
 
 			@media only screen and (orientation: portrait) and (max-width: 900px) {
 				height: calc(50vh - 74px);
